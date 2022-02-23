@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(105, 141, 172);
+    box-sizing: border-box;
+}
+.site_name {
+    color: rgb(63, 180, 79);
+}
+footer {
+    background-color: rgb(101, 195, 202);
+    text-align: center;
+
+}
