@@ -1,9 +1,9 @@
 body {
-    background-color: rgb(105, 141, 172);
+    background-color: rgba(158, 218, 210, 0.466);
     box-sizing: border-box;
 }
 .site_name {
-    color: rgb(63, 180, 79);
+    color: rgb(145, 122, 101);
 }
 footer {
     background-color: rgb(101, 195, 202);

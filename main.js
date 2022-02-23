@@ -7,6 +7,4 @@ admin = name;
 
 alert( admin ); 
 
-let earth;  // ourPlanetName
-let currentUser; //currentUserName
 
