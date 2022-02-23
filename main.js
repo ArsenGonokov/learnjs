@@ -1,10 +1,5 @@
-let admin;
-let name;
-
-name = "Джон";
-
-admin = name;
-
-alert( admin ); 
+let rocket;
+rocket = "buran";
+console.log (rocket);
 
 
