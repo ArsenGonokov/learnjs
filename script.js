@@ -1,12 +1,19 @@
-let admin;
-let name;
+// let admin;
+// let name;
 
-name = "Джон";
+// name = "Джон";
 
-admin = name;
+// admin = name;
 
-alert( admin ); 
+// alert( admin ); 
 
-let earth;  // ourPlanetName
-let currentUser; //currentUserName
+// let earth;  // ourPlanetName
+// let currentUser; //currentUserName
 
+let message = prompt ("Какое официальное название JS?", " ");
+ 
+if (message == "ECMAScript") {
+alert ("А ты хорош!");
+} else { 
+alert ("Надо подучить мат часть братик!");
+}
