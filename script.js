@@ -21,6 +21,9 @@
 
 
 function calc (math, a, b){
+    if (typeof math !== "string" || typeof math === "" || typeof !a === "number" || typeof !b === "number") {
+        console.log("Error");
+    }
     if (math == 'sum') {
         console.log (a + b);
     }
@@ -37,12 +40,9 @@ function calc (math, a, b){
             console.log (a/b);
         }  
     }
-    if (math == null) {
+    if (math === null) {
         console.log ("Введите корректное значение!")
     }
-    if (math == undefined) {
-        console.log ("Что черт возьми ты такое делаешь?")
-    } 
 
 }
 calc('sum', 3, 3);
@@ -51,4 +51,4 @@ calc('div', 6, 2);
 calc('multi', 2, 2);
 calc('div', 2, 0);
 calc(null || null || null);
-calc(undefined || undefined || undefined)
+calc();
