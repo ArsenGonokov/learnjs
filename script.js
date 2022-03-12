@@ -54,32 +54,60 @@
 // calc();`
 
 
-function calc (math, a, b) {
+// function calc (math, a, b) {
 
-    switch (math) {
-        case "sum": 
-        console.log(a+b);
-            break;
-        case "sub":
-            console.log(a-b);
-            break;
-        case "div":
-            console.log(a/b);
-            break;
-        case "div0":
-            console.log("Делить нельзя хуйло!");
-            break;
-        case "multi":
-            console.log(a*b);
-            break;
-        default:
-            console.log("ХЗ что за хуйню ты хочешь?");
+//     switch (math) {
+//         case "sum": 
+//         console.log(a+b);
+//             break;
+//         case "sub":
+//             console.log(a-b);
+//             break;
+//         case "div":
+//             console.log(a/b);
+//             break;
+//         case "div0":
+//             console.log("Делить нельзя хуйло!");
+//             break;
+//         case "multi":
+//             console.log(a*b);
+//             break;
+//         default:
+//             console.log("ХЗ что за хуйню ты хочешь?");
+//         }
+// }
+// calc('sum', 10, 2);
+// calc('sub', 5, 2);
+// calc('div', 8, 2);
+// calc('multi', 5, 2);
+// calc('div0', 2, 0);
+// calc(null || null || null);
+// calc();
+
+
+    let operations = {
+        addition:"sum",
+        subtraction:"sub",
+        multiplication:"mult",
+        division:"div"
+    };
+
+    function calc (operations, a, b){
+        if (operations.addition){
+            console.log (a+b);
         }
-}
-calc('sum', 10, 2);
-calc('sub', 5, 2);
-calc('div', 8, 2);
-calc('multi', 5, 2);
-calc('div0', 2, 0);
-calc(null || null || null);
-calc();
+        if (operations.subtraction){
+            console.log (a-b);
+        }
+        if (operations.multiplication){
+            console.log (a*b);
+        }
+        if (operations.division){
+            if (b==0){
+                console.log ("На ноль делить нельзя!");
+            } else {
+                console.log (a/b);
+            }            
+        }
+    }
+    calc(operations, 2, 2);
