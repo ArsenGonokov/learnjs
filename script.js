@@ -54,17 +54,32 @@
 // calc();`
 
 
+function calc (math, a, b) {
 
-    let math= "sum";
-    let a=1;
-    let b=3;
     switch (math) {
-        case "sum":
-            console.log(a+b);
+        case "sum": 
+        console.log(a+b);
             break;
         case "sub":
             console.log(a-b);
             break;
-                console.log("ХЗ что за хуйню ты хочешь!");
+        case "div":
+            console.log(a/b);
+            break;
+        case "div0":
+            console.log("Делить нельзя хуйло!");
+            break;
+        case "multi":
+            console.log(a*b);
+            break;
+        default:
+            console.log("ХЗ что за хуйню ты хочешь?");
+        }
 }
-
+calc('sum', 10, 2);
+calc('sub', 5, 2);
+calc('div', 8, 2);
+calc('multi', 5, 2);
+calc('div0', 2, 0);
+calc(null || null || null);
+calc();
