@@ -65,7 +65,6 @@
         case "sub":
             console.log(a-b);
             break;
-            default:
                 console.log("ХЗ что за хуйню ты хочешь!");
 }
 
