@@ -92,17 +92,20 @@
         division:"div"
     };
 
-    function calc (operations, a, b){
-        if (operations.addition){
+    function calc (operation, a, b){
+        if (typeof operation !== "string" || typeof operation === "" || typeof !a === "number" || typeof !b === "number") {
+            console.log("Errorrrrrrr!");
+        }
+        if (operation == operations.addition){
             console.log (a+b);
         }
-        if (operations.subtraction){
+        if (operation == operations.subtraction){
             console.log (a-b);
         }
-        if (operations.multiplication){
+        if (operation == operations.multiplication){
             console.log (a*b);
         }
-        if (operations.division){
+        if (operation == operations.division){
             if (b==0){
                 console.log ("На ноль делить нельзя!");
             } else {
@@ -110,4 +113,10 @@
             }            
         }
     }
-    calc(operations, 2, 2);
+    calc(operations.addition, 2, 2);
+    calc(operations.subtraction, 2, 2);
+    calc(operations.multiplication, 2, 3);
+    calc(operations.division, 10, 2);
+    calc(operations.division, 3, 0);
+    calc(null || null || null);
+    calc();
