@@ -121,7 +121,7 @@
     // calc(null || null || null);
     // calc();
 
-    let constList = {
+    /*let constList = {
         "Create a Task": "In progress",
         "Make a bed": "Done",
         "Write a poste": "To Do",
@@ -148,11 +148,15 @@
     
     changeStatus("Done");
     addTask("In progress");
-    deleteTask("Done");
-    
+    deleteTask("Done");  
     // console.log(Object.values(constList))
-
+    */
     
-
-
-
+    let message = "м\nа\nр\nа\nф\nо\nн";
+    function showVerticaMessage (message){
+        if (message[0]=="м")
+        console.log (message[0].toUpperCase() + message.slice(1));
+        if (message.length > 10)
+        console.log(message.substr[0,10]);
+    }
+    showVerticaMessage(message);    
