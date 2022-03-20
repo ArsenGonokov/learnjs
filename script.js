@@ -85,38 +85,67 @@
 // calc();
 
 
-    let operations = {
-        addition:"sum",
-        subtraction:"sub",
-        multiplication:"mult",
-        division:"div"
-    };
+    // let operations = {
+    //     addition:"sum",
+    //     subtraction:"sub",
+    //     multiplication:"mult",
+    //     division:"div"
+    // };
 
-    function calc (operation, a, b){
-        if (typeof operation !== "string" || typeof operation === "" || typeof !a === "number" || typeof !b === "number") {
-            console.log("Errorrrrrrr!");
-        }
-        if (operation == operations.addition){
-            console.log (a+b);
-        }
-        if (operation == operations.subtraction){
-            console.log (a-b);
-        }
-        if (operation == operations.multiplication){
-            console.log (a*b);
-        }
-        if (operation == operations.division){
-            if (b==0){
-                console.log ("На ноль делить нельзя!");
-            } else {
-                console.log (a/b);
-            }            
-        }
+    // function calc (operation, a, b){
+    //     if (typeof operation !== "string" || typeof operation === "" || typeof !a === "number" || typeof !b === "number") {
+    //         console.log("Errorrrrrrr!");
+    //     }
+    //     if (operation == operations.addition){
+    //         console.log (a+b);
+    //     }
+    //     if (operation == operations.subtraction){
+    //         console.log (a-b);
+    //     }
+    //     if (operation == operations.multiplication){
+    //         console.log (a*b);
+    //     }
+    //     if (operation == operations.division){
+    //         if (b==0){
+    //             console.log ("На ноль делить нельзя!");
+    //         } else {
+    //             console.log (a/b);
+    //         }            
+    //     }
+    // }
+    // calc(operations.addition, 2, 2);
+    // calc(operations.subtraction, 2, 2);
+    // calc(operations.multiplication, 2, 3);
+    // calc(operations.division, 10, 2);
+    // calc(operations.division, 3, 0);
+    // calc(null || null || null);
+    // calc();
+
+    let constList = {
+        "Create a Task": "In progress",
+        "Make a bed": "Done",
+        "Write a poste": "To Do",
+    } 
+    function changeStatus (currentStatus) {
+        if (currentStatus==constList["Make a bed"])
+        console.log(constList["Make a bed"]);
     }
-    calc(operations.addition, 2, 2);
-    calc(operations.subtraction, 2, 2);
-    calc(operations.multiplication, 2, 3);
-    calc(operations.division, 10, 2);
-    calc(operations.division, 3, 0);
-    calc(null || null || null);
-    calc();
+    function addTask (newTask) {
+        constList.newTask=["Have a walk"];
+        if (newTask==constList["Create a Task"])
+        console.log(newTask);
+    }
+    function deleteTask (deletedTask) {
+        delete constList.deletedTask;
+        if (deletedTask==constList["Make a bed"])
+        console.log(deletedTask);
+    }
+    function showList (displayTasks) {
+        
+    }
+    
+    changeStatus("Done");
+    addTask("In progress");
+    deleteTask("Done");
+    
+    
