@@ -133,19 +133,24 @@
     function addTask (newTask) {
         constList.newTask=["Have a walk"];
         if (newTask==constList["Create a Task"])
-        console.log(newTask);
+        console.log(constList.newTask);
     }
     function deleteTask (deletedTask) {
         delete constList.deletedTask;
         if (deletedTask==constList["Make a bed"])
-        console.log(deletedTask);
+        console.log(constList.deletedTask);
     }
     function showList (displayTasks) {
-        
+        if (displayTasks==constList["Create a Task"])
+        console.log(constList["Create a Task"]);
+   
     }
     
     changeStatus("Done");
     addTask("In progress");
     deleteTask("Done");
     
-    
+    // console.log(Object.values(constList))
+
+
+
