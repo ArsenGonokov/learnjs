@@ -152,11 +152,25 @@
     // console.log(Object.values(constList))
     */
     
-    let message = "м\nа\nр\nа\nф\nо\nн";
-    function showVerticaMessage (message){
-        if (message[0]=="м")
-        console.log (message[0].toUpperCase() + message.slice(1));
-        if (message.length > 10)
-        console.log(message.substr[0,10]);
+    // let message = "м\nа\nр\nа\nф\nо\nн";
+    // function showVerticaMessage (message){
+    //     if (message[0]=="м")
+    //     console.log (message[0].toUpperCase() + message.slice(1));
+    //     if (message.length > 10)
+    //     console.log(message.substr(0,10));
+    // }
+    // showVerticaMessage(message);
+    
+
+    function showVerticaMessage (message) { 
+        for (message=0; message.length<10; message++) {
+            
+        }
+        
+        // if (message[0] == "м")
+        // console.log (message[0].toUpperCase() + message.slice(1));     
+        console.log(message);
     }
-    showVerticaMessage(message);    
+    showVerticaMessage("марафон");
+
+
