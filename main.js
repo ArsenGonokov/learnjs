@@ -13,3 +13,4 @@ function usFirst(str){
 }
 
 console.log(usFirst("вася"));
+
