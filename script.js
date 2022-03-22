@@ -161,16 +161,13 @@
     // }
     // showVerticaMessage(message);
     
-
-    function showVerticaMessage (message) { 
-        for (message=0; message.length<10; message++) {
-            
-        }
+    function showVerticaMessage (verticalWord) {
         
-        // if (message[0] == "м")
-        // console.log (message[0].toUpperCase() + message.slice(1));     
-        console.log(message);
+            if (verticalWord=="марафон"){
+                if (verticalWord[0]=="м"){
+                 console.log (verticalWord[0].toUpperCase() + verticalWord.slice(1));  
+                }  
+            }
+        
     }
     showVerticaMessage("марафон");
-
-
