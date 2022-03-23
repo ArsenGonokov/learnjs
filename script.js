@@ -161,13 +161,10 @@
     // }
     // showVerticaMessage(message);
     
-    function showVerticaMessage (verticalWord) {
-        
-            if (verticalWord=="марафон"){
-                if (verticalWord[0]=="м"){
-                 console.log (verticalWord[0].toUpperCase() + verticalWord.slice(1));  
-                }  
-            }
-        
-    }
-    showVerticaMessage("марафон");
+    // function showVerticaMessage (verticalWord) {
+    //     for (let i=0; i<10; i++ )
+    //         if (verticalWord[0]=="м"){
+    //             console.log(verticalWord[0].toUpperCase() + verticalWord.substr(1,10));
+    //         }
+    // }
+    // showVerticaMessage("марафон");
