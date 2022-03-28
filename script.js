@@ -161,10 +161,17 @@
     // }
     // showVerticaMessage(message);
     
+
     // function showVerticaMessage (verticalWord) {
-    //     for (let i=0; i<10; i++ )
-    //         if (verticalWord[0]=="м"){
-    //             console.log(verticalWord[0].toUpperCase() + verticalWord.substr(1,10));
-    //         }
+    //     if (verticalWord[0]==verticalWord[0].toLowerCase()) {
+    //         verticalWord=verticalWord[0].toUpperCase() + verticalWord.slice(1);
+    //     }
+    //     if (verticalWord.length>10) {
+    //         verticalWord=verticalWord.slice(0, 10);
+    //     }
+    //     for (let i=0; i<verticalWord.length; i++ ) {
+    //         console.log(verticalWord[i]);
+    //     }
     // }
-    // showVerticaMessage("марафон");
+    // showVerticaMessage("марафонvfhfs;klfjv;lkdjhfv");
+
