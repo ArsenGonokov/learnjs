@@ -175,3 +175,39 @@
     // }
     // showVerticaMessage("марафонvfhfs;klfjv;lkdjhfv");
 
+    let constList = [
+        {   id:0,
+            name: "createPost",
+            status: "toDo",
+            priority:"low"
+        },
+
+        {   id:1,
+            name: "makeBad",
+            status: "Done",
+            priority:"high"
+        }
+    ]
+
+        console.log(constList.length);
+
+    function newTask (newTask) {
+        if (newTask=="newTask")
+        constList.push({id:2, name:"newTask"});
+        console.log("addToArr");
+        console.log(constList.length);
+    }
+    function deletedTask (deleteTask) {
+        if (deleteTask==constList[1].status)
+        constList.splice(1,1);
+        console.log("deleteddTask");
+        console.log(constList.length);
+    }
+    function changeStatus (currentStatus) {
+        if (currentStatus==constList[0].status)
+        console.log("Sdelano");
+        console.log(constList.length);
+    }
+    newTask("newTask");
+    deletedTask("Done");
+    changeStatus("toDo");
