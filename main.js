@@ -7,10 +7,10 @@
 
 // let usFirst = str[0].toUpperCase() + str.slice(1);
 
-function usFirst(str){
-    if (!str) return str;
-    return str[0].toUpperCase() + str.slice(1);
-}
+// function usFirst(str){
+//     if (!str) return str;
+//     return str[0].toUpperCase() + str.slice(1);
+// }
 
 console.log(usFirst("вася"));
 
@@ -43,3 +43,46 @@ console.log(usFirst("вася"));
     addTask("In progress");
     deleteTask("Done");  
     //console.log(Object.values(constList))
+
+
+    let todos = [];
+
+function addTask(taskName) {
+  todos.push({
+    id: 1,
+    name: taskName,
+    status: 'To Do',
+    priority: 'low',
+  });
+}
+
+function deleteTask(taskName) {
+  // найти объект в массиве у которого свойство name равно taskName
+  // как-то избавиться от этого объекта
+
+  todos = todos.filter(function(item) {
+    if (taskName == item.name) {
+      return false;
+    }
+
+    return true;
+  });
+}
+
+function changeStatus(taskName, status) {
+  // найти объект в массиве у которого свойство name равно taskName
+  // поменять свойство status у этого объекта на status
+}
+
+function changePriority(taskName, priority) {
+  // найти объект в массиве у которого свойство name равно taskName
+  // поменять свойство priority у этого объекта на priority
+}
+
+addTask('wake up, neo');
+addTask('have a breakfast');
+
+deleteTask('wake up, neo')
+
+console.log(todos);
+

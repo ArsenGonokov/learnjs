@@ -175,39 +175,106 @@
     // }
     // showVerticaMessage("марафонvfhfs;klfjv;lkdjhfv");
 
-    let constList = [
-        {   id:0,
-            name: "createPost",
-            status: "toDo",
-            priority:"low"
-        },
+    // let constList = [
+    //     {   id:0,
+    //         name: "createPost",
+    //         status: "toDo",
+    //         priority:"low"
+    //     },
 
-        {   id:1,
-            name: "makeBad",
-            status: "Done",
-            priority:"high"
+    //     {   id:1,
+    //         name: "makeBad",
+    //         status: "Done",
+    //         priority:"high"
+    //     }
+    // ]
+
+    //     console.log(constList.length);
+
+    // function newTask (newTask) {
+    //     if (newTask=="newTask")
+    //     constList.push({id:2, name:"newTask"});
+    //     console.log("addToArr");
+    //     console.log(constList.length);
+    // }
+    // function deletedTask (taskName) {
+    //     if (taskName==constList.name)
+    //     constList.splice(1,1);
+    //     console.log("deleteddTask");
+    //     console.log(constList.length);
+    // }
+    // function changeStatus (currentStatus) {
+    //     if (currentStatus==constList[0].status)
+    //     console.log("Sdelano");
+    //     console.log(constList.length);
+    // }
+    // newTask("newTask");
+    // deletedTask("makeBad");
+    // changeStatus("toDo");
+
+//     const array = [1, 2, 3, 4, 5];
+
+// const a = array.filter(function(item, index) {
+//   if (item % 2 == 0) {
+//     return false;
+//   }
+
+//   return true;
+// });
+
+
+let constList = [
+    {   id:1,
+        name: "createPost",
+        status: "toDo",
+        priority:"low"
+    },
+
+    {   id:2,
+        name: "makeBad",
+         status: "Done",
+         priority:"high"
+    }
+];
+
+function addTask (taskName) {
+    constList.push({
+        id:0,
+        name: taskName,
+        status: "toDo",
+        priority: "low",
+    });
+}
+function deleteTask (taskName) {
+    constList = constList.filter(function(item){
+        if (taskName == item.name){
+            return false;
         }
-    ]
+        return true;
+    });
+}
 
-        console.log(constList.length);
+function changeStatus (taskName, status) {
+    constList.map(function(item){
+        if (taskName == item.name && status==item.status){
+            return true; // надо перечитать переопределение свойств объектов
+        }
+        return false;
+    });
+}
 
-    function newTask (newTask) {
-        if (newTask=="newTask")
-        constList.push({id:2, name:"newTask"});
-        console.log("addToArr");
-        console.log(constList.length);
-    }
-    function deletedTask (deleteTask) {
-        if (deleteTask==constList[1].status)
-        constList.splice(1,1);
-        console.log("deleteddTask");
-        console.log(constList.length);
-    }
-    function changeStatus (currentStatus) {
-        if (currentStatus==constList[0].status)
-        console.log("Sdelano");
-        console.log(constList.length);
-    }
-    newTask("newTask");
-    deletedTask("Done");
-    changeStatus("toDo");
+function changePriority (taskName, priority) {
+
+}
+
+
+addTask ("May the Force be with you");
+addTask ("wake up, Neo");
+deleteTask("wake up, Neo");
+changeStatus("May the Force be with you", "high")
+
+
+console.log(constList);
+
+
+
