@@ -223,58 +223,69 @@
 // });
 
 
-let constList = [
-    {   id:1,
-        name: "createPost",
-        status: "toDo",
-        priority:"low"
-    },
+// let constList = [
+//     {   id:1,
+//         name: "createPost",
+//         status: "toDo",
+//         priority:"low"
+//     },
 
-    {   id:2,
-        name: "makeBad",
-         status: "Done",
-         priority:"high"
+//     {   id:2,
+//         name: "makeBad",
+//          status: "Done",
+//          priority:"high"
+//     }
+// ];
+
+// function addTask (taskName) {
+//     constList.push({
+//         id:0,
+//         name: taskName,
+//         status: "toDo",
+//         priority: "low",
+//     });
+// }
+// function deleteTask (taskName) {
+//     constList = constList.filter(function(item){
+//         if (taskName == item.name){
+//             return false;
+//         }
+//         return true;
+//     });
+// }
+
+// function changeStatus (taskName, status) {
+//     constList.map(function(item){
+//         if (taskName == item.name){
+//             constList.addTask = "Done";
+//             return true; 
+//         }
+
+//     });
+// }
+
+// function changePriority (taskName, priority) {
+
+// }
+
+
+// addTask ("May the Force be with you");
+// addTask ("wake up, Neo");
+// deleteTask("wake up, Neo");
+// changeStatus("May the Force be with you", "toDo")
+
+
+// console.log(constList);
+
+let arr = [1, 2, 3, 4, 5];
+function arraySum (array) {
+    let sum = 0;
+    for (let i=0; i<arr.length; i++) {
+        sum += array[i];
     }
-];
-
-function addTask (taskName) {
-    constList.push({
-        id:0,
-        name: taskName,
-        status: "toDo",
-        priority: "low",
-    });
+    console.log(sum);
 }
-function deleteTask (taskName) {
-    constList = constList.filter(function(item){
-        if (taskName == item.name){
-            return false;
-        }
-        return true;
-    });
-}
-
-function changeStatus (taskName, status) {
-    constList.map(function(item){
-        if (taskName == item.name && status==item.status){
-            return true; // надо перечитать переопределение свойств объектов
-        }
-        return false;
-    });
-}
-
-function changePriority (taskName, priority) {
-
-}
+arraySum(arr);
 
 
-addTask ("May the Force be with you");
-addTask ("wake up, Neo");
-deleteTask("wake up, Neo");
-changeStatus("May the Force be with you", "high")
-
-
-console.log(constList);
-
-
-
+  
