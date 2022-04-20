@@ -223,59 +223,6 @@
 // });
 
 
-// let constList = [
-//     {   id:1,
-//         name: "createPost",
-//         status: "toDo",
-//         priority:"low"
-//     },
-
-//     {   id:2,
-//         name: "makeBad",
-//          status: "Done",
-//          priority:"high"
-//     }
-// ];
-
-// function addTask (taskName) {
-//     constList.push({
-//         id:0,
-//         name: taskName,
-//         status: "toDo",
-//         priority: "low",
-//     });
-// }
-// function deleteTask (taskName) {
-//     constList = constList.filter(function(item){
-//         if (taskName == item.name){
-//             return false;
-//         }
-//         return true;
-//     });
-// }
-
-// function changeStatus (taskName, status) {
-//     constList.map(function(item){
-//         if (taskName == item.name){
-//             constList.addTask = "Done";
-//             return true; 
-//         }
-
-//     });
-// }
-
-// function changePriority (taskName, priority) {
-
-// }
-
-
-// addTask ("May the Force be with you");
-// addTask ("wake up, Neo");
-// deleteTask("wake up, Neo");
-// changeStatus("May the Force be with you", "toDo")
-
-
-// console.log(constList);
 
 // let arr = [1, 2, 3, 4, 5];
 // function arraySum (array) {
@@ -288,40 +235,122 @@
 // arraySum(arr);
 
 
-let array = [1, 2, 3, 4, 5, 6, 7];
-let a = 2;
-function visibleNumber (arr, number) {
-    let b = [];
-    for (let i=0; i<arr.length; i++) {
-        if (arr[i] %number == 0) {
-            b.push(arr[i]);
-        }
-    }
-    console.log(b);
-}
-
-visibleNumber(array, a);
-
 // let array = [1, 2, 3, 4, 5, 6, 7];
 // let a = 2;
-// array.forEach(function(visibleNumber){
-//     let b = 0;
-//     for (let i=0; i<array.length; i++){
-//         if (visibleNumber %a == 0){
-//             b = array[i];
-//             console.log(b);
+// function visibleNumber (arr, number) {
+//     let b = [];
+//     for (let i=0; i<arr.length; i++) {
+//         if (arr[i] %number == 0) {
+//             b.push(arr[i]);
 //         }
-//     }    
-// });
-
-// let array = [1, 2, 3, 4, 5, 6, 7];
-// let a = 2;
-// let b = 0;
-// b = array.filter(function(item){
-//     for (let i=0; i<array.length; i++){
-//         item %a == 0;
-//         return false;
 //     }
-//     return true;   
-// });
-// console.log(b);
+//     console.log(b);
+// }
+
+// visibleNumber(array, a);
+
+
+
+
+let todoList = [
+    {
+      id: 1,
+      name: "createPost",
+      status: "toDo",
+      priority: "low",
+    },
+    {
+      id: 2,
+      name: "test",
+      status: "Done",
+      priority: "high",
+    }
+  ]
+  
+  function addTask(taskName) {
+    todoList.push({
+      id: 3,
+      name: taskName,
+      status: 'inProgress',
+      priority: 'low',
+    });
+  }
+  
+//   function changeStatus(task, status) {
+//     todoList[task] = status;
+//   }
+  
+  function deleteTask(taskName) {
+    todoList.findIndex(function(item){
+        if (item.name === taskName){
+            todoList.splice(taskName, 1);
+            return true;
+        }
+        return false;
+    });
+    todoList = todoList.filter(function(item) {
+      if (item.name !== taskName) {   
+        return true;
+      }
+        return false;
+    });
+  }
+  
+  function changePriority(name, priority) {
+    todoList = todoList.map((item) => {
+      if (item.name === name) {
+        return {
+          ...item,
+          priority,
+        };
+      }
+      return item;
+    });
+    // let result = [];
+    // for (let i =0; i < todoList.length; i++) {
+    //   if (todoList[i].name === name) {
+    //     result.push({
+    //       ...todoList[i],
+    //       priority,
+    //     });
+    //   } else {
+    //     result.push(todoList[i])
+    //   }
+    // }
+  
+    // return result
+  }
+  
+  function changeStatus(name, status) {
+    todoList.map((item) => {
+      if (item.name === name) {
+        item.status = status;
+        return item;
+      }
+      return item;
+    });
+  }
+  
+  function showList() {
+    let todo = '';
+    let inProgress = '';
+    let done = '';
+    for (let newTask in todoList) {
+      if (todoList[newTask] == 'To Do') {
+        todo += todoList.push({
+          id: 3,
+          name: newTask,
+          status: 'Well Done',
+          priority: 'medium'
+        });
+      }
+      if (todoList[newTask] == 'To Do') {}
+    }
+  }
+  
+  addTask('newTask')
+  changePriority('createPost', 'high')
+  //deleteTask('test');
+  changeStatus('create a post', 'Done')
+  
+  console.log(todoList);
