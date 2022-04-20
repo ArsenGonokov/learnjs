@@ -277,15 +277,51 @@
 
 // console.log(constList);
 
-let arr = [1, 2, 3, 4, 5];
-function arraySum (array) {
-    let sum = 0;
+// let arr = [1, 2, 3, 4, 5];
+// function arraySum (array) {
+//     let sum = 0;
+//     for (let i=0; i<arr.length; i++) {
+//         sum = sum + array[i];
+//     }
+//     console.log(sum);
+// }
+// arraySum(arr);
+
+
+let array = [1, 2, 3, 4, 5, 6, 7];
+let a = 2;
+function visibleNumber (arr, number) {
+    let b = [];
     for (let i=0; i<arr.length; i++) {
-        sum += array[i];
+        if (arr[i] %number == 0) {
+            b.push(arr[i]);
+        }
     }
-    console.log(sum);
+    console.log(b);
 }
-arraySum(arr);
 
+visibleNumber(array, a);
 
-  
+// let array = [1, 2, 3, 4, 5, 6, 7];
+// let a = 2;
+// array.forEach(function(visibleNumber){
+//     let b = 0;
+//     for (let i=0; i<array.length; i++){
+//         if (visibleNumber %a == 0){
+//             b = array[i];
+//             console.log(b);
+//         }
+//     }    
+// });
+
+// let array = [1, 2, 3, 4, 5, 6, 7];
+// let a = 2;
+// let b = 0;
+// b = array.filter(function(item){
+//     for (let i=0; i<array.length; i++){
+//         item %a == 0;
+//         return false;
+//     }
+//     return true;   
+// });
+// console.log(b);
