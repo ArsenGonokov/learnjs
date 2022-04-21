@@ -45,99 +45,191 @@
 //     //console.log(Object.values(constList))
 
 
-    let todos = [];
+//     let todos = [];
+
+// function addTask(taskName) {
+//   todos.push({
+//     id: 1,
+//     name: taskName,
+//     status: 'To Do',
+//     priority: 'low',
+//   });
+// }
+
+// function deleteTask(taskName) {
+//   // найти объект в массиве у которого свойство name равно taskName
+//   // как-то избавиться от этого объекта
+
+//   todos = todos.filter(function(item) {
+//     if (taskName == item.name) {
+//       return false;
+//     }
+
+//     return true;
+//   });
+// }
+
+// function changeStatus(taskName, status) {
+//   // найти объект в массиве у которого свойство name равно taskName
+//   // поменять свойство status у этого объекта на status
+// }
+
+// function changePriority(taskName, priority) {
+//   // найти объект в массиве у которого свойство name равно taskName
+//   // поменять свойство priority у этого объекта на priority
+// }
+
+// addTask('wake up, neo');
+// addTask('have a breakfast');
+
+// deleteTask('wake up, neo')
+
+// console.log(todos);
+
+
+
+
+// let constList = [
+//     {   id:1,
+//         name: "createPost",
+//         status: "toDo",
+//         priority:"low"
+//     },
+
+//     {   id:2,
+//         name: "makeBad",
+//          status: "Done",
+//          priority:"high"
+//     }
+// ];
+
+// function addTask (taskName) {
+//     constList.push({
+//         id:0,
+//         name: taskName,
+//         status: "toDo",
+//         priority: "low",
+//     });
+// }
+// function deleteTask (taskName) {
+//     constList = constList.filter(function(item){
+//         if (taskName == item.name){
+//             return false;
+//         }
+//         return true;
+//     });
+// }
+
+// function changeStatus (taskName, status) {
+//     constList.map(function(item){
+//         if (taskName == item.name){
+//             constList.addTask = "Done";
+//             return true; 
+//         }
+
+//     });
+// }
+
+// function changePriority (taskName, priority) {
+
+// }
+
+
+// addTask ("May the Force be with you");
+// addTask ("wake up, Neo");
+// deleteTask("wake up, Neo");
+// changeStatus("May the Force be with you", "toDo")
+
+
+
+
+
+let todoList = [
+  {
+    id: 1,
+    name: "createPost",
+    status: "toDo",
+    priority: "low",
+  },
+  {
+    id: 2,
+    name: "test",
+    status: "Done",
+    priority: "high",
+  }
+]
 
 function addTask(taskName) {
-  todos.push({
-    id: 1,
+  todoList.push({
+    id: 3,
     name: taskName,
-    status: 'To Do',
+    status: 'inProgress',
     priority: 'low',
   });
 }
 
+//   function changeStatus(task, status) {
+//     todoList[task] = status;
+//   }
+
 function deleteTask(taskName) {
-  // найти объект в массиве у которого свойство name равно taskName
-  // как-то избавиться от этого объекта
-
-  todos = todos.filter(function(item) {
-    if (taskName == item.name) {
+  todoList.findIndex(function(item){
+      if (item.name === taskName){
+          todoList.splice(taskName, 1);
+          return true;
+      }
       return false;
+  });
+  todoList = todoList.filter(function(item) {
+    if (item.name !== taskName) {   
+      return true;
     }
-
-    return true;
+      return false;
   });
 }
 
-function changeStatus(taskName, status) {
-  // найти объект в массиве у которого свойство name равно taskName
-  // поменять свойство status у этого объекта на status
-}
-
-function changePriority(taskName, priority) {
-  // найти объект в массиве у которого свойство name равно taskName
-  // поменять свойство priority у этого объекта на priority
-}
-
-addTask('wake up, neo');
-addTask('have a breakfast');
-
-deleteTask('wake up, neo')
-
-console.log(todos);
-
-
-
-
-let constList = [
-    {   id:1,
-        name: "createPost",
-        status: "toDo",
-        priority:"low"
-    },
-
-    {   id:2,
-        name: "makeBad",
-         status: "Done",
-         priority:"high"
+function changePriority(name, priority) {
+  todoList = todoList.map((item) => {
+    if (item.name === name) {
+      return {
+        ...item,
+        priority,
+      };
     }
-];
-
-function addTask (taskName) {
-    constList.push({
-        id:0,
-        name: taskName,
-        status: "toDo",
-        priority: "low",
-    });
-}
-function deleteTask (taskName) {
-    constList = constList.filter(function(item){
-        if (taskName == item.name){
-            return false;
-        }
-        return true;
-    });
+    return item;
+  });
 }
 
-function changeStatus (taskName, status) {
-    constList.map(function(item){
-        if (taskName == item.name){
-            constList.addTask = "Done";
-            return true; 
-        }
-
-    });
+function changeStatus(name, status) {
+  todoList.map((item) => {
+    if (item.name === name) {
+      item.status = status;
+      return item;
+    }
+    return item;
+  });
 }
 
-function changePriority (taskName, priority) {
-
+function showList() {
+  let todo = '';
+  let inProgress = '';
+  let done = '';
+  for (let newTask in todoList) {
+    if (todoList[newTask] == 'To Do') {
+      todo += todoList.push({
+        id: 3,
+        name: newTask,
+        status: 'Well Done',
+        priority: 'medium'
+      });
+    }
+    if (todoList[newTask] == 'To Do') {}
+  }
 }
 
+addTask('newTask')
+changePriority('createPost', 'high')
+deleteTask('t');
+changeStatus('create a post', 'Done')
 
-addTask ("May the Force be with you");
-addTask ("wake up, Neo");
-deleteTask("wake up, Neo");
-changeStatus("May the Force be with you", "toDo")
-
-
+console.log(todoList);

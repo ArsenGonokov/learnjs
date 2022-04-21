@@ -252,105 +252,69 @@
 
 
 
-let todoList = [
-    {
-      id: 1,
-      name: "createPost",
-      status: "toDo",
-      priority: "low",
-    },
-    {
-      id: 2,
-      name: "test",
-      status: "Done",
-      priority: "high",
+let toDoList = [
+  {
+    id: 1,
+    name: "createPost",
+    status: "toDo",
+    priority: "low",
+  },
+  {
+    id: 2,
+    name: "makeBad",
+    status: "done",
+    priority: "high",
+  }
+]
+function addTask(taskName){
+  toDoList.push({
+    id: 3,
+    name: taskName,
+    status: "inProgress",
+    priority: "low",
+  });
+}
+function changeStatus(taskName, status) {
+  toDoList.map((item) => {
+    if (item.name === taskName) {
+      item.status = status;
+      return true;
     }
-  ]
-  
-  function addTask(taskName) {
-    todoList.push({
-      id: 3,
-      name: taskName,
-      status: 'inProgress',
-      priority: 'low',
-    });
-  }
-  
-//   function changeStatus(task, status) {
-//     todoList[task] = status;
-//   }
-  
-  function deleteTask(taskName) {
-    todoList.findIndex(function(item){
-        if (item.name === taskName){
-            todoList.splice(taskName, 1);
-            return true;
-        }
-        return false;
-    });
-    todoList = todoList.filter(function(item) {
-      if (item.name !== taskName) {   
-        return true;
-      }
-        return false;
-    });
-  }
-  
-  function changePriority(name, priority) {
-    todoList = todoList.map((item) => {
-      if (item.name === name) {
-        return {
-          ...item,
-          priority,
-        };
-      }
-      return item;
-    });
-    // let result = [];
-    // for (let i =0; i < todoList.length; i++) {
-    //   if (todoList[i].name === name) {
-    //     result.push({
-    //       ...todoList[i],
-    //       priority,
-    //     });
-    //   } else {
-    //     result.push(todoList[i])
-    //   }
-    // }
-  
-    // return result
-  }
-  
-  function changeStatus(name, status) {
-    todoList.map((item) => {
-      if (item.name === name) {
-        item.status = status;
-        return item;
-      }
-      return item;
-    });
-  }
-  
-  function showList() {
-    let todo = '';
-    let inProgress = '';
-    let done = '';
-    for (let newTask in todoList) {
-      if (todoList[newTask] == 'To Do') {
-        todo += todoList.push({
-          id: 3,
-          name: newTask,
-          status: 'Well Done',
-          priority: 'medium'
-        });
-      }
-      if (todoList[newTask] == 'To Do') {}
+    return false;
+  });
+}
+function changePriority(taskName, priority) {
+  toDoList = toDoList.map((item) => {
+    if (item.name === taskName) {
+      return {
+        ...item,
+        priority,
+      };
     }
-  }
-  
-  addTask('newTask')
-  changePriority('createPost', 'high')
-  //deleteTask('test');
-  changeStatus('create a post', 'Done')
-  
-  console.log(todoList);
+    return item;
+  });
+}
+function deleteTask(taskName) {
+  toDoList.findIndex(function(item){
+      if (item.name === taskName){
+          toDoList.splice(taskName, 1);
+          return true;
+      }
+      return false;
+  });
+  toDoList = toDoList.filter(function(item) {
+    if (item.name !== taskName) {   
+      return true;
+    }
+      return false;
+  });
+}
+
+
+addTask("newTask");
+changeStatus("createPost", "medium");
+changePriority("newTask", "high");
+deleteTask("createPost");
+
+console.log(toDoList);
+
