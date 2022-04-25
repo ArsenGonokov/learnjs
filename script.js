@@ -121,36 +121,36 @@
     // calc(null || null || null);
     // calc();
 
-    /*let constList = {
-        "Create a Task": "In progress",
-        "Make a bed": "Done",
-        "Write a poste": "To Do",
-    } 
-    function changeStatus (currentStatus) {
-        if (currentStatus==constList["Make a bed"])
-        console.log(constList["Make a bed"]);
-    }
-    function addTask (newTask) {
-        constList.newTask=["Have a walk"];
-        if (newTask==constList["Create a Task"])
-        console.log(constList.newTask);
-    }
-    function deleteTask (deletedTask) {
-        delete constList.deletedTask;
-        if (deletedTask==constList["Make a bed"])
-        console.log(constList.deletedTask);
-    }
-    function showList (displayTasks) {
-        if (displayTasks==constList["Create a Task"])
-        console.log(constList["Create a Task"]);
+    // let constList = {
+    //     "Create a Task": "In progress",
+    //     "Make a bed": "Done",
+    //     "Write a poste": "To Do",
+    // } 
+    // function changeStatus (currentStatus) {
+    //     if (currentStatus==constList["Make a bed"])
+    //     console.log(constList["Make a bed"]);
+    // }
+    // function addTask (newTask) {
+    //     constList.newTask=["Have a walk"];
+    //     if (newTask==constList["Create a Task"])
+    //     console.log(constList.newTask);
+    // }
+    // function deleteTask (deletedTask) {
+    //     delete constList.deletedTask;
+    //     if (deletedTask==constList["Make a bed"])
+    //     console.log(constList.deletedTask);
+    // }
+    // function showList (displayTasks) {
+    //     if (displayTasks==constList["Create a Task"])
+    //     console.log(constList["Create a Task"]);
    
-    }
+    // }
     
-    changeStatus("Done");
-    addTask("In progress");
-    deleteTask("Done");  
+    // changeStatus("Done");
+    // addTask("In progress");
+    // deleteTask("Done");  
     // console.log(Object.values(constList))
-    */
+    
     
     // let message = "м\nа\nр\nа\nф\nо\nн";
     // function showVerticaMessage (message){
@@ -174,54 +174,6 @@
     //     }
     // }
     // showVerticaMessage("марафонvfhfs;klfjv;lkdjhfv");
-
-    // let constList = [
-    //     {   id:0,
-    //         name: "createPost",
-    //         status: "toDo",
-    //         priority:"low"
-    //     },
-
-    //     {   id:1,
-    //         name: "makeBad",
-    //         status: "Done",
-    //         priority:"high"
-    //     }
-    // ]
-
-    //     console.log(constList.length);
-
-    // function newTask (newTask) {
-    //     if (newTask=="newTask")
-    //     constList.push({id:2, name:"newTask"});
-    //     console.log("addToArr");
-    //     console.log(constList.length);
-    // }
-    // function deletedTask (taskName) {
-    //     if (taskName==constList.name)
-    //     constList.splice(1,1);
-    //     console.log("deleteddTask");
-    //     console.log(constList.length);
-    // }
-    // function changeStatus (currentStatus) {
-    //     if (currentStatus==constList[0].status)
-    //     console.log("Sdelano");
-    //     console.log(constList.length);
-    // }
-    // newTask("newTask");
-    // deletedTask("makeBad");
-    // changeStatus("toDo");
-
-//     const array = [1, 2, 3, 4, 5];
-
-// const a = array.filter(function(item, index) {
-//   if (item % 2 == 0) {
-//     return false;
-//   }
-
-//   return true;
-// });
-
 
 
 // let arr = [1, 2, 3, 4, 5];
@@ -309,12 +261,94 @@ function deleteTask(taskName) {
       return false;
   });
 }
+function showList () {
+  let toDo = "";
+  let inProgress = "";
+  let done = "";
+  for (let item of toDoList) {
+    if (item.status === "toDo") {
+      toDo += "\"" + item.name + "\"" + "\n"; 
+    }
+
+    if (item.status === "inProgress") {
+      inProgress += "\"" + item.name + "\"" + "\n"; 
+    }
+
+    if (item.status === "done") {
+      done += "\"" + item.name + "\"" + "\n"; 
+    }
+  }
+
+  if (toDo == '') {
+    toDo = '  -' + '\n';
+  }
+  if (inProgress == '') {
+    inProgress = '  -' + '\n';
+  }
+  if (done == '') {
+    done = '  -' + '\n';
+  }
+
+   console.log('To Do:\n' + toDo + 'In Progress:\n' + inProgress + 'Done:\n' + done)
+}
+
+function showBy (groupBy) {
+  let toDo = "";
+  let inProgress = "";
+  let done = "";
+  let high = "";
+  let low = "";
+  for (let item of toDoList) {
+
+    if (item.status === "toDo") {
+      toDo += "\"" + item.name + "\"" + "\n"; 
+    }
+    if (item.status === "inProgress") {
+      inProgress += "\"" + item.name + "\"" + "\n"; 
+    }
+    if (item.status === "done") {
+      done += "\"" + item.name + "\"" + "\n"; 
+    }
+
+    if (item.priority === "high") {
+      high += "\"" + item.name + "\"" + "\n"; 
+    }
+    if (item.priority === "low") {
+      low += "\"" + item.name + "\"" + "\n"; 
+    }
+
+  }
+    if (toDo == '') {
+      toDo = '  -' + '\n';
+    }
+    if (inProgress == '') {
+      inProgress = '  -' + '\n';
+    }
+    if (done == '') {
+      done = '  -' + '\n';
+    }
+
+    if (high == '') {
+      high = '  -' + '\n';
+    }
+    if (low == '') {
+      low = '  -' + '\n';
+    }
+
+    console.log('To Do:\n' + toDo + 'In Progress:\n' + inProgress + 'Done:\n' + done + 'high:\n' + high + 'low:\n'+ low)
+}
+  
 
 
-addTask("newTask");
-changeStatus("createPost", "medium");
-changePriority("newTask", "high");
-deleteTask("createPost");
+// addTask("newTask");
+// changeStatus("createPost", "medium");
+// changePriority("newTask", "high");
+// deleteTask("createPost");
+showList();
+showBy("priority");
+
+
 
 console.log(toDoList);
+
 
