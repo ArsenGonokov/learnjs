@@ -141,14 +141,11 @@
 // changeStatus("May the Force be with you", "toDo")
 
 
-
-
-let arr = [1, 2, 3, 4, 5];
-function arraySum (array) {
-    let sum = 0;
-    for (let i=0; i<arr.length; i++) {
-        sum = sum + array[i];
+function arrayAvarage (a) {  
+  let getAvarage = 0;
+    for (let i=0; i<a.length; i++) {
+        getAvarage = a[i]+getAvarage;
     }
-    console.log(sum);
+    console.log(getAvarage/a.length);
 }
-arraySum(arr);
+arrayAvarage([1, 2, 3, 4, 5, 6]);
