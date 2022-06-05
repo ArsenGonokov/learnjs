@@ -204,151 +204,160 @@
 
 
 
-let toDoList = [
-  {
-    id: 1,
-    name: "createPost",
-    status: "toDo",
-    priority: "low",
-  },
-  {
-    id: 2,
-    name: "makeBad",
-    status: "done",
-    priority: "high",
-  }
-]
-function addTask(taskName){
-  toDoList.push({
-    id: 3,
-    name: taskName,
-    status: "inProgress",
-    priority: "low",
-  });
-}
-function changeStatus(taskName, status) {
-  toDoList.map((item) => {
-    if (item.name === taskName) {
-      item.status = status;
-      return true;
-    }
-    return false;
-  });
-}
-function changePriority(taskName, priority) {
-  toDoList = toDoList.map((item) => {
-    if (item.name === taskName) {
-      return {
-        ...item,
-        priority,
-      };
-    }
-    return item;
-  });
-}
-function deleteTask(taskName) {
-  toDoList.findIndex(function(item){
-      if (item.name === taskName){
-          toDoList.splice(taskName, 1);
-          return true;
-      }
-      return false;
-  });
-  toDoList = toDoList.filter(function(item) {
-    if (item.name !== taskName) {   
-      return true;
-    }
-      return false;
-  });
-}
-function showList () {
-  let toDo = "";
-  let inProgress = "";
-  let done = "";
-  for (let item of toDoList) {
-    if (item.status === "toDo") {
-      toDo += "\"" + item.name + "\"" + "\n"; 
-    }
+// let toDoList = [
+//   {
+//     id: 1,
+//     name: "createPost",
+//     status: "toDo",
+//     priority: "low",
+//   },
+//   {
+//     id: 2,
+//     name: "makeBad",
+//     status: "done",
+//     priority: "high",
+//   }
+// ]
+// function addTask(taskName){
+//   toDoList.push({
+//     id: 3,
+//     name: taskName,
+//     status: "inProgress",
+//     priority: "low",
+//   });
+// }
+// function changeStatus(taskName, status) {
+//   toDoList.map((item) => {
+//     if (item.name === taskName) {
+//       item.status = status;
+//       return true;
+//     }
+//     return false;
+//   });
+// }
+// function changePriority(taskName, priority) {
+//   toDoList = toDoList.map((item) => {
+//     if (item.name === taskName) {
+//       return {
+//         ...item,
+//         priority,
+//       };
+//     }
+//     return item;
+//   });
+// }
+// function deleteTask(taskName) {
+//   toDoList.findIndex(function(item){
+//       if (item.name === taskName){
+//           toDoList.splice(taskName, 1);
+//           return true;
+//       }
+//       return false;
+//   });
+//   toDoList = toDoList.filter(function(item) {
+//     if (item.name !== taskName) {   
+//       return true;
+//     }
+//       return false;
+//   });
+// }
+// function showList () {
+//   let toDo = "";
+//   let inProgress = "";
+//   let done = "";
+//   for (let item of toDoList) {
+//     if (item.status === "toDo") {
+//       toDo += "\"" + item.name + "\"" + "\n"; 
+//     }
 
-    if (item.status === "inProgress") {
-      inProgress += "\"" + item.name + "\"" + "\n"; 
-    }
+//     if (item.status === "inProgress") {
+//       inProgress += "\"" + item.name + "\"" + "\n"; 
+//     }
 
-    if (item.status === "done") {
-      done += "\"" + item.name + "\"" + "\n"; 
-    }
-  }
+//     if (item.status === "done") {
+//       done += "\"" + item.name + "\"" + "\n"; 
+//     }
+//   }
 
-  if (toDo == '') {
-    toDo = '  -' + '\n';
-  }
-  if (inProgress == '') {
-    inProgress = '  -' + '\n';
-  }
-  if (done == '') {
-    done = '  -' + '\n';
-  }
+//   if (toDo == '') {
+//     toDo = '  -' + '\n';
+//   }
+//   if (inProgress == '') {
+//     inProgress = '  -' + '\n';
+//   }
+//   if (done == '') {
+//     done = '  -' + '\n';
+//   }
 
-   console.log('To Do:\n' + toDo + 'In Progress:\n' + inProgress + 'Done:\n' + done)
-}
+//    console.log('To Do:\n' + toDo + 'In Progress:\n' + inProgress + 'Done:\n' + done)
+// }
 
-function showBy (groupBy) {
-  let toDo = "";
-  let inProgress = "";
-  let done = "";
-  let high = "";
-  let low = "";
-  for (let item of toDoList) {
+// function showBy (groupBy) {
+//   let toDo = "";
+//   let inProgress = "";
+//   let done = "";
+//   let high = "";
+//   let low = "";
+//   for (let item of toDoList) {
 
-    if (item.status === "toDo") {
-      toDo += "\"" + item.name + "\"" + "\n"; 
-    }
-    if (item.status === "inProgress") {
-      inProgress += "\"" + item.name + "\"" + "\n"; 
-    }
-    if (item.status === "done") {
-      done += "\"" + item.name + "\"" + "\n"; 
-    }
+//     if (item.status === "toDo") {
+//       toDo += "\"" + item.name + "\"" + "\n"; 
+//     }
+//     if (item.status === "inProgress") {
+//       inProgress += "\"" + item.name + "\"" + "\n"; 
+//     }
+//     if (item.status === "done") {
+//       done += "\"" + item.name + "\"" + "\n"; 
+//     }
 
-    if (item.priority === "high") {
-      high += "\"" + item.name + "\"" + "\n"; 
-    }
-    if (item.priority === "low") {
-      low += "\"" + item.name + "\"" + "\n"; 
-    }
+//     if (item.priority === "high") {
+//       high += "\"" + item.name + "\"" + "\n"; 
+//     }
+//     if (item.priority === "low") {
+//       low += "\"" + item.name + "\"" + "\n"; 
+//     }
 
-  }
-    if (toDo == '') {
-      toDo = '  -' + '\n';
-    }
-    if (inProgress == '') {
-      inProgress = '  -' + '\n';
-    }
-    if (done == '') {
-      done = '  -' + '\n';
-    }
+//   }
+//     if (toDo == '') {
+//       toDo = '  -' + '\n';
+//     }
+//     if (inProgress == '') {
+//       inProgress = '  -' + '\n';
+//     }
+//     if (done == '') {
+//       done = '  -' + '\n';
+//     }
 
-    if (high == '') {
-      high = '  -' + '\n';
-    }
-    if (low == '') {
-      low = '  -' + '\n';
-    }
+//     if (high == '') {
+//       high = '  -' + '\n';
+//     }
+//     if (low == '') {
+//       low = '  -' + '\n';
+//     }
 
-    console.log('To Do:\n' + toDo + 'In Progress:\n' + inProgress + 'Done:\n' + done + 'high:\n' + high + 'low:\n'+ low)
-}
+//     console.log('To Do:\n' + toDo + 'In Progress:\n' + inProgress + 'Done:\n' + done + 'high:\n' + high + 'low:\n'+ low)
+// }
   
 
 
-// addTask("newTask");
-// changeStatus("createPost", "medium");
-// changePriority("newTask", "high");
-// deleteTask("createPost");
-showList();
-showBy("priority");
+// // addTask("newTask");
+// // changeStatus("createPost", "medium");
+// // changePriority("newTask", "high");
+// // deleteTask("createPost");
+// showList();
+// showBy("priority");
 
 
 
-console.log(toDoList);
+// console.log(toDoList);
 
 
+
+function arrayAvarage (a) {  
+  let getAvarage = 0;
+    for (let i=0; i<a.length; i++) {
+        getAvarage = a[i]+getAvarage;
+    }
+    console.log(getAvarage/a.length);
+}
+arrayAvarage([1, 2, 3, 4, 5, 6]);
