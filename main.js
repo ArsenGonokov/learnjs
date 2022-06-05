@@ -143,93 +143,12 @@
 
 
 
-
-let todoList = [
-  {
-    id: 1,
-    name: "createPost",
-    status: "toDo",
-    priority: "low",
-  },
-  {
-    id: 2,
-    name: "test",
-    status: "Done",
-    priority: "high",
-  }
-]
-
-function addTask(taskName) {
-  todoList.push({
-    id: 3,
-    name: taskName,
-    status: 'inProgress',
-    priority: 'low',
-  });
-}
-
-//   function changeStatus(task, status) {
-//     todoList[task] = status;
-//   }
-
-function deleteTask(taskName) {
-  todoList.findIndex(function(item){
-      if (item.name === taskName){
-          todoList.splice(taskName, 1);
-          return true;
-      }
-      return false;
-  });
-  todoList = todoList.filter(function(item) {
-    if (item.name !== taskName) {   
-      return true;
+let arr = [1, 2, 3, 4, 5];
+function arraySum (array) {
+    let sum = 0;
+    for (let i=0; i<arr.length; i++) {
+        sum = sum + array[i];
     }
-      return false;
-  });
+    console.log(sum);
 }
-
-function changePriority(name, priority) {
-  todoList = todoList.map((item) => {
-    if (item.name === name) {
-      return {
-        ...item,
-        priority,
-      };
-    }
-    return item;
-  });
-}
-
-function changeStatus(name, status) {
-  todoList.map((item) => {
-    if (item.name === name) {
-      item.status = status;
-      return item;
-    }
-    return item;
-  });
-}
-
-function showList() {
-  let todo = '';
-  let inProgress = '';
-  let done = '';
-  for (let newTask in todoList) {
-    if (todoList[newTask] == 'To Do') {
-      todo += todoList.push({
-        id: 3,
-        name: newTask,
-        status: 'Well Done',
-        priority: 'medium'
-      });
-    }
-    if (todoList[newTask] == 'To Do') {}
-  }
-}
-
-addTask('newTask')
-changePriority('createPost', 'high')
-deleteTask('t');
-changeStatus('create a post', 'Done')
-
-console.log(todoList);
+arraySum(arr);
